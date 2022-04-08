@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/img/icon.png"/>
+    <title>Jogja Explorer</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/sammy.js"></script>
+    <script src="js/jquery.cookies.js"></script>
+</head>
+<body class="bg-black">
+    <nav class="absolute top-0 left-0 w-full z-30 navbar text-white p-5 bg-gradient-linear">
+        <div class="z-30 flex items-center justify-center w-full">
+            <div class="z-30 w-1/4 flex items-center justify-start pl-16" id="logo">
+                <img class="w-30" src="assets/svg/jogja.svg" alt="">
+            </div>
+            <div class="z-30 col-span-2 w-1/2" id="menu">
+                <div class="flex items-center justify-center h-full font-bold tracking-widest">
+                    <div class="grid grid-cols-4 gap-3 text-center text-xs">
+                        <div id="beranda" class="menu-item">
+                            <a href="#/">
+                                <span lang="id">BERANDA</span>
+                                <span lang="en">HOME</span>
+                            </a>
+                        </div>
+                        <div id="jelajahi" class="menu-item">
+                            <a href="#/explore/jogja">
+                                <span lang="id">JELAJAHI</span>
+                                <span lang="en">EXPLORE</span>
+                            </a>
+                        </div>
+                        <div id="berita" class="menu-item">
+                            <a href="#/berita">
+                                <span lang="id">BERITA</span>
+                                <span lang="en">NEWS</span>
+                            </a>
+                        </div>
+                        <div id="kontak-kami" class="menu-item">
+                            <a href="#/kontak">
+                                <span lang="id">KONTAK KAMI</span>
+                                <span lang="en">CONTACT US</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="language" class="w-1/4 z-50 relative flex items-center justify-end pr-9 h-full">
+                <div class="bg-pink rounded-full inline-block cursor-pointer" id="bahasa-click">
+                    <div class="grid grid-cols-3 gap-2 p-1">
+                        <div class="h-full flex items-center justify-end">
+                            <img id="language-flag-icon" src="assets/svg/id.svg" width="80%" alt="">
+                        </div>
+                        <div class="text-center text-sm font-bold leading-relaxed">
+                            <span id="language-ticker">ID</span>
+                        </div>
+                        <div class="h-full flex items-center justify-center"><img src="assets/svg/left-arrow.svg" width="50%" alt=""></div>
+                    </div>
+                </div>
+                <div class="absolute dropdown rounded-xl -bottom-28 overflow-hidden w-60 text-sm leading-wider" id="bahasa">
+                    <div class="pl-4 bg-gray-200 p-2 text-black-1a font-bold border-b-1 border-gray-300">
+                        <span lang="id">Pilih Bahasa</span>
+                        <span lang="en">Select Language</span>
+                    </div>
+                    <div class="pl-4 bg-white p-2 text-gray-300 font-normal hover:bg-red-300 menu-bahasa cursor-pointer border-b-1 border-gray-300 flex" id="id"><span class="w-3/4">Bahasa (Indonesia)</span><span class="w-1/4 flex justify-end items-center"><img class="w-4" src="assets/svg/centang.svg" alt="" srcset=""></span></div>
+                    <div class="pl-4 bg-white p-2 text-gray-300 font-normal hover:bg-red-300 menu-bahasa cursor-pointer group-hover" id="en">English (United States)</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="main">
+
+    </div>  
+    <div id="footer">
+        <div class="bg-darker-red p-24 relative">
+            <div class="w-10 flex justify-center items-center bg-yellow rounded-full w-10 h-10 flex justify-center items-center absolute -top-5 right-40 cursor-pointer" id="scroll-up">
+                <img  src="assets/svg/arrow-up.svg" alt="" srcset="">
+            </div>
+            <div class="grid grid-cols-3 gap-14">
+                <div class="grid grid-cols-1 gap-7 text-white">
+                    <div class="flex justify-start items-center">
+                        <img src="assets/img/logo.png" class="h-16 pr-5" alt="" srcset="">
+                        <img src="assets/svg/jogja.svg" class="h-9" alt="" srcset="">
+                    </div>
+                    <div class="font-light">
+                        <span lang="id">
+                            Jogja Explorer adalah sebuah brosus elektronik yang dapat dibuka melalui tautan yang ada, brosur ini ditujukan untuk turis lokal dan mancanegara yang ingin mengeksplore Jogja lebih dalam.
+                        </span>                        
+                        <span lang="en">
+                            Jogja Explorer is an electronic brochure that can be opened via the existing link, this brochure is intended for local and foreign tourists who want to explore Jogja more deeply.
+                        </span>
+                    </div>
+                    <div>
+                        #JogjaIstimewa #AyokeJogja #Jogjaseru #Memayuhayuningbawana
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold text-white mb-3"><span class="border-b-2 border-orange pb-1">Navigasi</span></div>
+                    <div class="grid grid-cols-2 gap-7 text-base font-bold text-white">
+                        <div>
+                            <a href="#/">
+                                <span lang="id">Beranda</span>
+                                <span lang="en">Home</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#/berita">
+                                <span lang="id">Berita</span>
+                                <span lang="en">News</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#/explore/jogja">
+                                <span lang="id">Jelajahi</span>
+                                <span lang="en">Explore</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#/kontak">
+                                <span lang="id">Kontak Kami</span>
+                                <span lang="en">Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-7 text-white">
+                    <div>
+                        <div class="mb-3 font-bold"><span class="border-b-2 border-orange pb-1">Email</span></div>
+                        
+                        <div>jogjaexplore@gmail.com</div>
+                    </div>
+                    <div>
+                        <div class="mb-3 font-bold"><span class="border-b-2 border-orange pb-1">Social Media</span></div>
+                        
+                        <div class="flex pt-3">
+                            <a href="https://www.instagram.com/humasjogja/"><div class="h-10 w-10 flex justify-center items-center border-2 rounded-full mr-4"><img class="h-4" src="assets/svg/instagram.svg" alt="" srcset=""></div></a>
+                            <a href="https://www.youtube.com/channel/UC6vcKVVzPxWw3eVxfa-gkJQ"><div class="h-10 w-10 flex justify-center items-center border-2 rounded-full mr-4"><img class="h-3" src="assets/svg/youtube.svg" alt="" srcset=""></div></a>
+                            <a href=""><div class="h-10 w-10 flex justify-center items-center border-2 rounded-full mr-4"><img class="h-4" src="assets/svg/whatsapp.svg" alt="" srcset=""></div></a>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-darker-yellow p-5 text-center">
+            <div>Copyright © 2021 JOGJA EXPLORER. All Right Reserved </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="bunker-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/bunker.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.9270992140528!2d110.44549291487868!3d-7.582914477019702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a66afbed3ead3%3A0x400208ebbdc0d806!2sBunker%20Kaliadem%20Merapi!5e0!3m2!1sid!2sid!4v1625230027673!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Bunker Kali Adem</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">
+                                        Dulunya digunakan untuk bersembunyi warga ketika gunung mengalami erupsi, tetapi pada tahun 2006 mengalami kerusakan akibat erupsi dan kini sudah terbengkalai dan dijadikan tempat wisata dengan panorama Gunung Merapi aktif. Wisata ini dapat dicapai melalui jalan tanah bergelombang dengan menggunakan motor atau menyewa mobil jeep.
+                                    </span>
+                                    <span lang="en">
+                                        It used to hide people when the mountain erupted, but in 2006 it was damaged by the eruption and is now abandoned and used as a tourist spot with an active panorama of Mount Merapi. This tour can be reached via bumpy dirt roads by motorcycle or renting a jeep. 
+                                    </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 3.000 / Orang</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Kinahrejo, Harjobinangun, Pakem, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="merapi-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/merapi2.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6231329299453!2d110.42214421487901!3d-7.615921877405179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5e6ec08af943%3A0xa843109615445506!2sMuseum%20Gunungapi%20Merapi!5e0!3m2!1sid!2sid!4v1625230739768!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="en">Mount Merapi Museum</span>
+                                    <span lang="id">Museum Gunung Merapi</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">
+                                        Museum Gunung Merapi merupakan museum bersejarah yang didalamnya terdapat replika sebaran awan panas Gunung Merapi, peralatan bekas erupsi, alat peraga, dan riwayat letusan. Lokasinya berada dibagian utara dari Kota Yogyakarta dan dapat ditempuh dengan kendaraan apapun. Wisata ini juga menyuguhkan pemandangan Gunung Merapi yang akan terlihat ketika cuaca cerah.  
+                                    </span>
+                                    <span lang="en">
+                                        Mount Merapi Museum is a historical museum in which there is a replica of the spread of hot clouds of Mount Merapi, used eruption equipment, props, and the history of eruptions. The location is located in the northern part of Yogyakarta City and can be reached by any vehicle. This tour also offers a view of Mount Merapi that will be seen when the weather is clear. 
+                                    </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 5.000 - 10.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Banteng, Harjobinangun, Pakem, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="prambanan-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/prambanan.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2412386.8354255683!2d107.58149583508333!3d-6.764272189602733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x19e7a03b25955a2d!2sCandi%20Prambanan!5e0!3m2!1sid!2sid!4v1625229853289!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Candi Prambanan</span>
+                                    <span lang="en">Prambanan Temple</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Candi Prambanan atau Candi Roro Jonggrang adalah kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu Brahma sebagai dewa pencipta, Wisnu sebagai dewa pemelihara, dan Siwa sebagai dewa pemusnah.</span>
+                                    <span lang="en">Prambanan Temple or Roro Jonggrang Temple is the largest Hindu temple complex in Indonesia built in the 9th century AD. The story that developed into a special attraction for tourists. This temple is dedicated to Brahma, Vishnu, and Shiva. The temple has been recognized by UNESCO as a world heritage site. </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 5.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Banteng, Harjobinangun, Pakem, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="klangon-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/klangon.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.9823766374975!2d110.45263255041779!3d-7.576896594509211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a66e66aba0c5f%3A0x3e322915d949a25!2sBukit%20Klangon!5e0!3m2!1sen!2sid!4v1625121563144!5m2!1sen!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="en">Klangon Hill</span>
+                                    <span lang="id">Bukit Klangon</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="en">Klangon Hill is the highest area inhabited by residents. The background of Mount Merapi which looks very clearly becomes an attraction for wisatwan. The perfect time to visit this place is in the morning.  Uphill road and cool atmosphere will accompany your journey to the location</span>
+                                    <span lang="id">Bukit Klangon merupakan kawasan tertinggi yang dihuni oleh warga. Background Gunung Merapi yang terlihat sangat jelas menjadi daya tarik bagi wisatwan. Waktu yang pas untuk mengunjungi tempat ini yaitu pagi hari. Jalan yang menanjak dan suasana sejuk akan mengiringi perjalan Anda menuju tempat lokasi</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Gratis </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Kalitengah Lor, Glagaharjo, Cangkringan, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="breksi-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/breksi.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.5364285161859!2d110.50197960808114!3d-7.78210009108996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5aa458b4665b%3A0xa4b0fc6ad0ae38c7!2sTebing%20Breksi!5e0!3m2!1sid!2sid!4v1625230239503!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Breksi Cliff</h1>
+                                <p class="text-base font-light">
+                                    <span lang="en">Breksi Cliff is a tourist attraction that has been designated as a cultural heritage. The location that was originally a place of breksi stone quarry has now been turned into a tourist attraction that is favored by tourists, especially nature lovers. When you go upstairs you will be presented with a view of the city and temples. Guests can also enjoy the sunset from the top of the cliff.</span>
+                                    <span lang="id">Tebing Breksi merupakan tempat wisata yang telah ditetapkan sebagai cagar budaya. Lokasi yang awalnya merupakan tempat tambang batu breksi kini telah berubah menjadi objek wisata yang disukai oleh wisatawan khususnya pencinta alam. Ketika naik ke atas Anda akan disuguhkan pemandangan kota dan candi-candi. Anda juga dapat menikmati sunset dari atas tebing.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Gn. Sari, Sambirejo, Prambanan , Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="monumen-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/monumen.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.3788065711533!2d110.36741811488017!3d-7.7495850789841745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a58f99013c989%3A0x2a96db25b8ff4333!2sMonumen%20Yogya%20Kembali!5e0!3m2!1sid!2sid!4v1625230683268!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Monumen Jogja Kembali</span>
+                                    <span lang="en">Jogja Kembali Monument</span>
+
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="en">Museum Monumen Jogja Kembali adalah sebuah museum sejarah perjuangan kemerdekaan Republik Indonesia. Bentuknya yang seperti tumpeng menjadi ciri khas museum ini. Didalamnya terdapat benda-benda bersejarah dan klasik bekas perjuangan para pahlawan. Disini juga terdapat taman lampion, pasar kerajinan, dan permainan seru yang dapat menjadi opsi ketika berkunjung.</span>
+                                    <span lang="id">Jogja Kembali Monument Museum is a historical museum of the struggle for independence of the Republic of Indonesia. Its tumpeng-like shape is a characteristic of this museum. Inside are historical and classic objects used to struggle the heroes. There is also a lantern garden, a craft market, and fun games that can be an option when visiting.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 - 20.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Jongkang, Sariharjo, Ngaglik, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="castle-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/castle.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.731603798094!2d110.44881551487875!3d-7.604159477267559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5d9bed435109%3A0x284f5fe8b2b683c9!2sThe%20Lost%20World%20Castle!5e0!3m2!1sid!2sid!4v1625230622458!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">The Lost World Castle</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">The Lost World Castle merupakan salah satu objek wisata di kawasan lereng Gunung Merapi. Objek wisata ini dibangun untuk mengenang letusan sebelumnya dan menghidupkan kembali ekonomi masyarakat. Wisata ini menyuguhkan gagahnya Gunugn Merapi sebagai latar belakang dan terdapat permainan seru serta spot berfoto yang menarik.</span>
+                                    <span lang="en">The Lost World Castle is one of the attractions in the slope of Mount Merapi. This tourist attraction was built to commemorate previous eruptions and revive the economy of the community. This tour presents the dashing Gunugn Merapi as a backdrop and there are fun games and interesting photo spots</span>
+                                    
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 30.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Petung, Kepuharjo, Cangkringan, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="sindu-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/sindu.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.212351624998!2d110.35205991488033!3d-7.767291979195502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a584281200f8b%3A0xeed0884f4b2272a8!2sSindu%20Kusuma%20Edupark%20(SKE)%20%3A%20Instagram%20%40Skedupark!5e0!3m2!1sid!2sid!4v1625230865149!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Sindu Kusuma Edupark</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Sindu Kusuma Edupark merupakan taman hiburan dengan berbagai wahana menarik yang bisa dinikmati mulai dari anak-anak hingga dewasa. Bianglala setinggi 46 meter menjadi ikon dan ciri khas tersendiri dari wisata ini. Selain itu juga terdapat kolam renang didalamnya. Wisata ini cocok untuk Anda yang ingin seru-seruan dengan keluarga, teman, maupun kekasih. </span>
+                                    <span lang="en">Sindu Kusuma Edupark is an amusement park with various interesting rides that can be enjoyed from children to adults. The 46-meter-high ferris wheel is an icon and a distinctive feature of this tour. There is also a swimming pool inside. This tour is suitable for those of you who want to have fun with family, friends, or lovers. </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 - 100.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Kragilan, Sinduadi, Mlati, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="lagoon-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/lagoon.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.801576345922!2d110.44807131487977!3d-7.704430478447465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5c75eba9da15%3A0xd4d6063b3b163462!2sBlue%20Lagoon%20Jogja!5e0!3m2!1sid!2sid!4v1625230923238!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Blue Lagoon Jogja</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Wisata ini menyuguhkan tempat pemandian alam terbuka. Mata airnya yang jernih dan berwarna biru kehijauan dan dikelilingi oleh pepohonan  menjadi daya tarik bagi para wisatawan. Untuk mempermudah akses menuju lokasi, lebih baik menggunakan kendaraan roda dua. Suasana yang sejuk dan menenangkan dapat menjadi obat stress dan menenangkan hati.</span>
+                                    <span lang="en">This tour features an outdoor bath. The clear, turquoise springs surrounded by trees are an attraction for tourists. To facilitate access to the location, it is better to use a two-wheeled vehicle. A cool and calming atmosphere can be a stress medication and calm the heart.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Jangkang, Wedodomartani, Ngemplak, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="bay-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/sleman/jogja_bay.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.395183555353!2d110.41668671488017!3d-7.747840778963362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bd52e7e19b7%3A0xbef22cb0aeba5965!2sJogja%20Bay%20Pirates%20Adventure%20Waterpark!5e0!3m2!1sid!2sid!4v1625230976053!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Jogja Bay Waterpark</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Jogja Bay Waterpark atau Jogja Bay adalah salah satu taman wisata air atau waterpark terbesar di Asia Tenggara. Wisata dengan tema bajak laut ini memiliki wahana yang cukup lengkap untuk anak-anak hingga dewasa. Tempatnya luas dan memiliki fasilitas yang sangat lengkap bagi para pengunjung. Tempat ini cocok untuk menikmati liburan bersama keluarga, teman, maupun kekasih.</span>
+                                    <span lang="en">Jogja Bay WateIDRark or Jogja Bay is one of the largest water parks in Southeast Asia. This pirate-themed tour has quite complete rides for children to adults. The place is spacious and has very complete facilities for visitors. This place is suitable for enjoying a vacation with family, friends, and lovers.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 90.000 - 100.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Jenengan, Maguwoharjo, Depok, Sleman, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="pedut-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kulon-progo/pedut.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.1870291731448!2d110.1188820148804!3d-7.769982179227632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aefcb98e324b9%3A0x417b7b093fdf367f!2sAir%20Terjun%20Kedung%20Pedut!5e0!3m2!1sid!2sid!4v1625232975274!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Air Terjun Kedung Pedut</span>
+                                    <span lang="en">Kedung Pedut Waterfall</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Air Terjun Kedung Pedut atau biasa disebut Curug Kedung Pedut berasal dari istilah bahasa Jawa. Curug yang berarti air terjun, kedung berarti kubangan atau kolam, dan pedut berarti kabut. Air Terjun Kedung Pedut merupakan salah satu wisata alam yang di Kulonprogo yang dikenal karena keindahan warna airnya yang hijau dan susana yang menyejukkan.</span>
+                                    <span lang="en">Kedung Pedut Waterfall or commonly called Curug Kedung Pedut comes from the Javanese term. Waterfall which means waterfall, kedung means pond or pond, and pedut means fog. Kedung Pedut Waterfall is one of the natural attractions in Kulonprogo which is known for its beautiful green water color and soothing susana.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Girimulyo, Kabupaten Kulon Progo, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="biru-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kulon-progo/biru.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.84975853816!2d110.1257803148808!3d-7.805725179656023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aeff7861e0b91%3A0x5604e4ced3f4227e!2sWisata%20Alam%20Kalibiru!5e0!3m2!1sid!2sid!4v1625233039406!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Kali Biru</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Wisata Alam Kalibiru, wisata alamnya menyuguhkan pemandangan berupa Waduk Sermo dan hamparan hutan yang luas. Tentunya yang paling spesial melihat bentangan alam yang indah ini dari ketinggian 450 meter di bawah permukaan laut (Mdpl), karena Kalibiru ini berada di kawasan Perbukitan Menoreh. Terdapat beberapa spot foto menarik yang bisa Anda gunakan.</span>
+                                    <span lang="en">Kalibiru Nature Tourism, nature tourism offers a view in the form of Sermo Reservoir and a wide expanse of forest. Surely the most special to see this beautiful landscape from an altitude of 450 meters below sea level (Mdpl), because Kalibiru is located in the Menoreh Hills area. There are several interesting photo spots that you can use.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 - 20.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Kalibiru, Hargowilis, Kokap, Kulon Progo, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="soka-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kulon-progo/soka.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.2205596428457!2d110.11537281488042!3d-7.766419779185096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af1e00cc25677%3A0xfc4eccf8f2a9af7a!2sAir%20Terjun%20Kembang%20Soka!5e0!3m2!1sid!2sid!4v1625233085226!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Air Terjun Kembang Soka</span>
+                                    <span lang="en">Kembang Soka Waterfall</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Air terjun Kembang Soka adalah menjadi wisata yang menarik perhatian wisatawan karena tempatnya yang luas dan mendamaikan hati. Air terjun ini memiliki julukan "air terjun warna" karena mempunyai berbagai warna, dan memiliki kolam pemandian yang khas dari air alami yang berasal dari Bukit Menoreh. Pengunjung harus berjalan kaki sejauh 200 meter untuk menuju air terjun.</span>
+                                    <span lang="en">Kembang Soka Waterfall is a tourist attraction that attracts tourists because of its spacious and reconciled place. This waterfall has the nickname "waterfall of color" because it has a variety of colors, and has a bathing pool typical of natural water that comes from Menoreh Hill. Visitors must walk 200 meters to reach the waterfall.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 6.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Banyunganti, Jatimulyo, Girimulyo, Kulon Progo, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="sidoharjo-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kulon-progo/sidoharjo.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.124598832343!2d110.19958831487946!3d-7.6697514780375275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af2faaaaaaaab%3A0xdc9ca9cd11d0dbe1!2sAir%20Terjun%20Sidoharjo!5e0!3m2!1sid!2sid!4v1625233140193!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Air Terjun Sidoharjo</span>
+                                    <span lang="en">Sidoharjo Waterfall</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Air Terjun Sidoharjo ini disebut juga Air Terjun “Perawan” karena yang menemukan pertama kali yaitu seorang gadis. Tebing tinggi dan pemandangan alam yang indah menjadi daya tarik bagi wisatawan. Lokasi yang banyak pepohonan menjadikan suasana sejuk dan asri saat mengunjungi tempat ini. Terdapat juga monyet yang berkeliaran sebagai penghuni hutan. </span>
+                                    <span lang="en">Sidoharjo Waterfall is also called "Virgin" Waterfall because the first one who found it was a girl. High cliffs and beautiful natural scenery are an attraction for tourists. The location of many trees makes the atmosphere cool and beautiful when visiting this place. There are also monkeys that roam as forest dwellers. </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 3.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Wonotawang, Sidoharjo, Samigaluh, Kulon Progo, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="mudal-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kulon-progo/mudal.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.2545366579584!2d110.11397391488029!3d-7.76280827914194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aee4a6fe974b7%3A0xc8f1e183fc8e2531!2sEkowisata%20Sungai%20Mudal!5e0!3m2!1sid!2sid!4v1625233195376!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Taman Sungai Mudal</span>
+                                    <span lang="en">Mudal River</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Taman Sungai Mudal merupakan objek wisata alam terbuka yang menawarkan pesona sebuah kolam pemandian yang bersumber dari mata air alami. Air yang jernih dan berwarna biru menjadi daya tarik tersendiri. Dukungan fasilitas yang ada membuat para pengunjung nyaman menikmati sejuk dan daminya suasana. Tempat ini sangat ramai ketika hari libur.</span>
+                                    <span lang="en">Mudal River Park is an outdoor attraction that offers the charm of a bathing pool sourced from natural springs. Clear and blue water is an attraction in itself. The support of existing facilities makes the visitors comfortable to enjoy the cool and cool atmosphere. The place is very crowded on holidays.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Banyunganti, Jatimulyo, Girimulyo, Kulon Progo, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="pasir-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/pasir.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.8050476471944!2d110.31693301488292!3d-8.019028982255497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7b009013455d2f%3A0x22e1771beec2dd40!2sGumuk%20Pasir%20Parangkusumo!5e0!3m2!1sid!2sid!4v1625233242763!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Gumuk Pasir Parangkusumo</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Gumuk Pasir Prangkusumo menjadi destinasi wisata yang cocok dipagi hari hingga senja. Area bukit pasir yang unik dan indah menjadi daya tarik bagi pengunjung.  Tempat ini sudah ditata rapi dan dapat menjadi destinasi populer untuk fotografi. Terdapat juga penyewaan skateboard dan jeep tour yang tentunya Anda harus membayar tambahan uang.</span>
+                                    <span lang="en">Gumuk Pasir Prangkusumo is a tourist destination that is suitable in the morning until dusk. The unique and beautiful sand dune area is an attraction for visitors.  This place is neatly arranged and can be a popular destination for photography. There are also skateboard rentals and jeep tours where you will have to pay extra money.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Pantai Parangtritis, Kec. Kretek, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="cemara-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/cemara.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.995325978977!2d110.24677431488257!3d-7.999417682013334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7b019a9d466d4d%3A0x120dd2ab8dbce03b!2sPantai%20Goa%20Cemara!5e0!3m2!1sid!2sid!4v1625233284404!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Pantai Goa Cemara</span>
+                                    <span lang="en">Goa Cemara Beach</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Pantai Goa Cemara adalah objek wisata pantai yang menyajikan landscape hutan cemara rimbun yang menjadi ciri khas dan membuat pengunjung penasaran. Terdapat penyewaan mobil ATV yang dapat menambah kesan saat datang kesini. Tempat luas, suasana sejuk, dan cocok untuk menikmati udara segar. Ketika mengunjungi tempat ini, Anda tetap harus waspada dengan ombaknya yang besar.</span>
+                                    <span lang="en">Goa Cemara Beach is a beach attraction that presents a lush fir forest landscape that is characteristic and makes visitors curious. There is an ATV car rental that can add to the impression when coming here. Spacious place, cool atmosphere, and suitable to enjoy the fresh air. When visiting this place, you still have to be aware of the big waves.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 4.000 - 15.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Patihan, Gadingsari, Sanden, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="pinus-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/pinus.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6960749986224!2d110.42980801488193!3d-7.926778381122197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a536355abb129%3A0x9fb567811ef62e4e!2sHutan%20Pinus%20Mangunan%20Dlingo!5e0!3m2!1sid!2sid!4v1625233321918!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Hutan Pinus Mangunan</span>
+                                    <span lang="en">Mangunan Pine Forest</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Hutan Pinus Mangunan merupakan salah satu bagian dari Resort Pengelolaan Hutan Mangunan. Ditempat ini, pengunjung dapat bersantai sambil menghirup udara segar, berfoto, duduk santai, atau hanya sekedar berjalan-jalan sambil menikmati suasanan hutan pinus yang khas dengan aroma kayu pohon pinus. Jalan berkelok, menurun, dan menanjak harus dilalui ketika menuju lokasi ini.</span>
+                                    <span lang="en">Mangunan Pine Forest is one part of Mangunan Forest Management Resort. In this place, visitors can relax while breathing fresh air, taking pictures, sitting back, or just taking a walk while enjoying the atmosphere of a typical pine forest with the aroma of pine trees. Winding, downhill, and uphill roads must be traversed when heading to this location.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 5.000 - 6.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Sukorame, Mangunan, Dlingo, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="puncak-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/puncak.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.9333695294067!2d110.43527401488168!3d-7.902030180820537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a531aaaaaaaab%3A0x6c28149b91ea59f4!2sPuncak%20Pinus%20Becici!5e0!3m2!1sid!2sid!4v1625233361039!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Puncak Becici</span>
+                                    <span lang="en">Becici Peak</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">
+                                        Puncak Becici merupakan objek wisata dararan tinggi yang menyajikan panorama alam terbuka yang indah. Para pengunjung juga dapat merasakan ketenangan ditengah-tengah hutan pinus dan juga dapat memandangi keindahan alam dari gardu pandang.. Pengunjung dapat melihat deretan pohon hijau yang tumbuh dengan rapat dari ketinggian dengan latar belakang Gunung Merbabu dan Gunung Merapi. Pengunjung dapat berburu sunset di lokasi ini.
+                                    </span>
+                                    <span lang="en">
+                                        Becici Peak is a high-rise tourist attraction that presents a beautiful panorama of the outdoors. Visitors can also feel the tranquility in the middle of the pine forest and can also see the natural beauty from the viewing booth. Visitors can see a row of green trees that grow tightly from a height against the background of Mount Merbabu and Mount Merapi. Visitors can hunt sunset at this location.
+                                    </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 3.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Gn. Cilik, Muntuk, Dlingo, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="curug-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/curug.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3255580933906!2d110.28490881488132!3d-7.860957880322026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af8e8727beabb%3A0x84ae2bf74ae25510!2sCurug%20Pulosari!5e0!3m2!1sid!2sid!4v1625234191190!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Curug Pulosari</span>
+                                    <span lang="en">Pulosari Waterfall</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Curug Pulosari atau Air Terjun Pulosari adalah objek wisata air terjun yang kecil namun tetap menyajikan pemandangan alam terbuka yang diiringi dengan suara gemercik  air mengalir. Airnya yang jernih dan pepohonan sekitar yang rindang memeri kesan ketenangan yang menjadikan pengunjung betah saat berada disini. Lokasinya sedikit tersembunyi dan belum banyak dijangkau orang.</span>
+                                    <span lang="en">Pulosari Waterfall is a small waterfall attraction but still presents an open-air scenery accompanied by the sound of flowing water. The clear water and shady surrounding trees give the impression of tranquility that makes visitors feel at home while they are here. The location is a little hidden and not much people reach.  </span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 2.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Sendangsari, Pajangan, Krebet, Sendangsari, Kec. Bantul, Bantul, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="panguk-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/panguk.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.3921481827933!2d110.43857351488236!3d-7.958364181508703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bacb24995d023%3A0x95aec26c5e9774a2!2sBukit%20Panguk%20Kediwung!5e0!3m2!1sid!2sid!4v1625233450126!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    Panguk Kediwung
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Panguk Kediwung merupakan wisata  di puncak bukit yang menyajikan pemandangan alam yang indah. Sejauh mata memandang akan nampak perbukitan yang hijau nan subur. Jika Anda berkunjung ketika pagi hari, akan nampak gumpalan awan tipis dan kabut yang bagus sebagai background berfoto. Disana juga disediakan spot-spot menarik yang tak kalah bagus untuk memotret</span>
+                                    <span lang="en">Panguk Kediwung is a hilltop tour that presents beautiful natural scenery. As far as the eye can see, there will be lush green hills. If you visit in the morning, you will see a thin clump of clouds and a nice mist as a photo background. There are also interesting spots that are no less good for photographing</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 2.000 - 5.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div> Kediwung, Mangunan, Dlingo, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="makam-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/bantul/makam.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.756420129473!2d110.39361121488179!3d-7.9204920810454436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a54f951ef760f%3A0x99cd48194e507430!2sMakam%20Raja-Raja%20Imogiri!5e0!3m2!1sid!2sid!4v1625233535181!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">
+                                        Makam Raja Imogiri
+                                    </span>
+                                    <span lang="en">
+                                        The tomb of Imogiri's King
+                                    </span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Makam Imogiri, atau Pasarean Imogiri, adalah lokasi peristirahatan terakhir Raja-Raja Mataram dan keluarganya. Kompleks pemakaman ini terletak kurang lebih 16 km di sebelah selatan Keraton Yogyakarta.</span>
+                                    <span lang="en">The tomb of Imogiri's King, or Pasarean Imogiri, is the final resting place of the Kings of Mataram and their families. This cemetery complex is located approximately 16 km south of Yogyakarta Palace. Access to the location is quite easy. This place also tells about history. When visiting must maintain ethics and manners because this is a sacred place.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light">
+                                    <div class="flex font-light">
+                                        <div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div>
+                                        <div>
+                                            <span lang="id">Sukarela</span>
+                                            <span lang="en">Voluntary</span>
+                                        </div>
+                                    </div>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Karang Kulon, Wukirsari, Kec. Imogiri, Bantul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="taman-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kota/taman.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.808731880945!2d110.3572694148808!3d-7.810061979708188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5793d0c2cf2b%3A0x276a21f8a01cbe13!2sKampung%20Wisata%20Taman%20Sari!5e0!3m2!1sid!2sid!4v1625234517213!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Taman Sari</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Taman Sari Yogyakarta atau Taman Sari Keraton Yogyakarta adalah situs bekas taman atau kebun istana Keraton Ngayogyakarta Hadiningrat, yang dapat dibandingkan dengan Kebun Raya Bogor sebagai kebun Istana Bogor. Kebun ini dibangun pada zaman Sultan Hamengku Buwono I pada tahun 1758-1765/9.</span>
+                                    <span lang="en">Taman Sari Yogyakarta or Taman Sari Keraton Yogyakarta is the site of the former garden or palace garden of Keraton Ngayogyakarta Hadiningrat, which can be compared to the Bogor Botanical Gardens as the Gardens of Bogor Palace. This garden was built during the time of Sultan HamengkuBuwono I in 1758-1765/9.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 5.000 - 15.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Patehan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="keraton-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kota/keraton.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8539764683314!2d110.36201441488073!3d-7.8052791796506735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5796db06c7ef%3A0x395271cf052b276c!2sKeraton%20Yogyakarta!5e0!3m2!1sid!2sid!4v1625234649215!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Keraton Yogyakarta</h1>
+                                <p class="text-base font-light">
+                                    <span lang="en">Ngayogyakarta Hadiningrat Palace or Yogyakarta Palace is the official palace of Ngayogyakarta Hadiningrat Sultanate which is now located in Yogyakarta City. Keraton is the official residence and seat of Yogyakarta government</span>
+                                    <span lang="id">Keraton Ngayogyakarta Hadiningrat atau Keraton Yogyakarta merupakan istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kini berlokasi di Kota Yogyakarta.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 5.000 - 7.500</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="benteng-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kota/benteng.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9020297669244!2d110.36411571488067!3d-7.800196279589608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5788c0b3eecf%3A0xb9611ce0232a9ff8!2sMuseum%20Benteng%20Vredeburg%20Yogyakarta!5e0!3m2!1sid!2sid!4v1625234711382!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Benteng Vredeburg</span>
+                                    <span lang="en">Vredeburg Fortress</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Bètèng Vredeburg adalah sebuah benteng yang terletak di depan Gedung Agung dan Kraton Kesultanan YogyakartaSekarang, benteng ini menjadi sebuah museum.</span>
+                                    <span lang="en">Bètèng Vredeburg is a fortress located in front of the Great Building and The Sultan's Palace of Yogyakarta. Now that the fort is no longer operational, it becomes a museum.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 3.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="malioboro-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kota/malioboro.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.973497628075!2d110.36368561488075!3d-7.7926305794988355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5825fa6106c5%3A0x3ea4c521a5ed1133!2sJl.%20Malioboro%2C%20Sosromenduran%2C%20Gedong%20Tengen%2C%20Kota%20Yogyakarta%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1625234786884!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Malioboro</span>
+                                    <span lang="en">Malioboro Street</span>
+
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Jalan Malioboro adalah nama salah satu kawasan jalan dari tiga jalan di Kota Yogyakarta yang membentang dari Tugu Yogyakarta hingga ke perempatan Kantor Pos Yogyakarta</span>
+                                    <span lang="en">Malioboro Street is the name of one of the three streets in Yogyakarta that stretches from Tugu Yogyakarta to the intersection of Yogyakarta Post Office. Malioboro street is usually a must-have place for tourists when coming to Yogyakarta</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Gratis</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Suryatmajan, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="zoo-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/kota/zoo.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8449927454703!2d110.39460901488079!3d-7.806229079662088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a576ee82ea301%3A0x6a2223f1f382914b!2sGembira%20Loka%20Zoo!5e0!3m2!1sid!2sid!4v1625234824063!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">Gembira Loka Zoo</h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Kebun Binatang Gembira Loka biasa disebut Gembira Loka Zoo adalah kebun binatang yang berada di Kota YogyakartaBerisi berbagai macam spesies dari belahan dunia, seperti orang utan, gajah asia, simpanse, harimau, dan lain sebagainya. Pengunjung juga dapat menikmati pertunjukan hewan yang tak kalah menarik. Biasanya tempat ini akan sangat ramai ketika hari libur.</span>
+                                    <span lang="en">Gembira Loka Zoo is a zoo located in Yogyakarta. Contains a wide variety of species from around the world, such as orang-utans, Asian elephants, chimpanzees, tigers, and so on. Visitors can also enjoy animal shows that are no less interesting. Usually this place will be very crowded on holidays.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 60.000 - 75.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Suryatmajan, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="jomblang-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/gunung-kidul/jomblang.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.716384836221!2d110.63614201488294!3d-8.028150882368267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bb41fce34d717%3A0xf9ffcb6f9fbd5cce!2sGoa%20Jomblang!5e0!3m2!1sid!2sid!4v1625234958217!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Goa Jomblang</span>
+                                    <span lang="en">Jomblang Cave</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Gua Jomblang merupakan gua vertikal yang bertipe collapse doline. Gua ini terbentuk akibat proses geologi amblasnya tanah beserta vegetasi yang ada di atasnya ke dasar bumi yang terjadi ribuan tahun lalu.Goa Jamblang memiliki mulut goa dipermukaan tanah. Pengunjung akan turun sedalam 15 meter dan menyusuri goa dengan berjalan kaki. Didalamnya terdapat tumbuhan-tumbuhan indah</span>
+                                    <span lang="en">Jomblang Cave is a vertical cave with collapse doline type. This cave was formed due to the geological process of the soil and vegetation on it to the bottom of the earth that occurred thousands of years ago. Jamblang Cave has a cave mouth on the surface of the ground. Visitors will descend as deep as 15 meters and walk through the cave on foot. Inside are beautiful plants</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>
+                                    <span lang="id">Gratis (tanpa pemandu)</span>
+                                    <span lang="en">Free (No Guide)</span>
+                                    
+                                </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Jetis, Pacarejo, Kec. Semanu, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="gethuk-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/gunung-kidul/gethuk.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.541559243148!2d110.4871372148822!3d-7.942852131318683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a52c5a2ffbded%3A0x1b21536ea267bf1!2sAir%20Terjun%20Sri%20Gethuk!5e0!3m2!1sid!2sid!4v1625235044538!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Air Terjun Sri Gethuk</span>
+                                    <span lang="en">Sri Getuk Waterfall</span>
+                                    
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Air Terjun Sri Gethuk merupakan salah satu objek wisata alam berupa air terjun. Air terjun yang beradai di tepi Sungai Oyo ini tampak seperti air terjun Grand Canyon di daerah Arizona, Amerika Serikat. Bebatuan yang tersusun rapi alami dan air sungai bening menyegarkan mata dan menghilangkan penat perjalanan. Terdapat flying fox yang dapat pengunjung nikmati jika ingin memacu adrenalin.</span>
+                                    <span lang="en">Sri Gethuk Waterfall is one of the natural attractions in the form of waterfalls. Located on the banks of the Oyo River, this waterfall looks like a Grand Canyon waterfall in Arizona, United States. The rocks are neatly arranged naturally and the clear river water refreshes the eyes and relieves travel fatigue. There is a flying fox that visitors can enjoy if they want to get adrenaline pumping.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 15.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Playen, Kabupaten Gunungkidul, Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="timang-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/gunung-kidul/timang.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.266140968201!2d110.66023091488441!3d-8.175921284214695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bb36265782cf3%3A0x25efcb5e3a28afa8!2sPantai%20Timang!5e0!3m2!1sid!2sid!4v1625235101443!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Pantai Timang</span>
+                                    <span lang="en">Timang Beach</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Pantai Timang yang cocok untuk para wisatawan yang ingin menantang adrenalinnya. Timang sebenarnya nama pulau yang dapat dicapai menggunakkan kereta gantung yang disebut gondola dan jembatan yang membentang diantara kedua pulau. </span>
+                                    <span lang="en">Timang Beach is suitable for tourists who want to challenge the adrenaline rush. Timang is actually the name of the island that can be reached using cable cars called gondolas and bridges that run between the two islands. Exciting experience and beautiful scenery will be gained. But it does cost quite expensive to enjoy the beautiful spot.</span>
+                                </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Purwodadi, Tepus, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="sepanjang-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/gunung-kidul/sepanjang.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15798.616709609883!2d110.55724142879409!3d-8.136644114521276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bbaf4d43a504d%3A0xec67e4a2048c2008!2sPantai%20Sepanjang!5e0!3m2!1sid!2sid!4v1625235174168!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Pantai Sepanjang</span>
+                                    <span lang="en">Sepanjang Beach</span>
+                                    
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Pantai yang disebut “Kuta”-nya Jogja ini merupakan pantai yang cukup populer di kalangan masyarakat jogja. Pantai satu ini memang memiliki koleksi pantai cantik yang tak terhitung jumlahnya. Bahkan pantai yang satu ini digadang-gadang sebagai “Kuta Tempo Doeloe”. Hamparan pantai yang luas dan pasir putih memberikan kesejukan dan ketenangan hati</span>
+                                    <span lang="en">The beach called "Kuta" by Jogja is a beach that is quite popular among the people of Jogja. This beach does have countless beautiful beach collections. Even this beach is held up as "Kuta Tempo Doeloe". The vast expanse of beach and white sand provide coolness and tranquility </span>
+                                    </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 10.000 </div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Ngalos, Purwodadi, Tepus, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="pindul-modal">
+        <div class="z-40 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="h-screen relative z-50">
+            <div class="p-9 bg-white h-auto w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl">
+                <div class="relative">
+                    <img class="-top-4 -right-4 w-5 absolute cursor-pointer button-close"  src="assets/svg/close.svg" alt="">
+                    <div class="flex">
+                        <div class="grid grid-cols-1 gap-4 w-1/2 pr-9">
+                            <div class="h-80 overflow-hidden rounded-3xl relative">
+                                <img class="h-full w-full max-w-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl" src="assets/img/wisata/gunung-kidul/pindul.png" alt="">
+                            </div>
+                            <div class="h-44 overflow-hidden rounded-3xl">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.6270118896236!2d110.64977731488204!3d-7.933966781210008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7bb3458abe4f09%3A0xd54ced46ae184848!2sGoa%20Pindul!5e0!3m2!1sid!2sid!4v1625235213096!5m2!1sid!2sid" class="h-full w-full" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex">
+                            <div class="grid grid-cols-1 h-3/4">
+                                <h1 class="text-3xl font-bold pb-5">
+                                    <span lang="id">Goa Pindul</span>
+                                    <span lang="en">Pindul Cave</span>
+                                </h1>
+                                <p class="text-base font-light">
+                                    <span lang="id">Goa pindul merupakan objek wisata berupa goa dengan aliran sungai bawah tanah berwarna kehijauan. Terdapat 3 zona yang akan pengunjung lewati selama 45 menit. Goa Pindul menyajikan Cave Tubing yaitu kegiatan menyusuri aliran sungai bawah tanah dengan menggunakan pelampung. Untuk keamanan dan kenyamanan Goa Pindul sudah memenuhi standar operasional dengan fasilitas yang ada</span>
+                                    <span lang="en">Pindul cave is a tourist attraction in the form of a cave with a greenish underground river flow. There are 3 zones that visitors will pass through for 45 minutes. Pindul Cave presents Cave Tubing which is an activity to walk down the underground river using buoys. For the safety and comfort of Goa Pindul has met operational standards with existing facilities</span>
+                                    </p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">HTM</h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/dollar.svg" class="inline-block"></div><div>Rp 35.000</div></div></p>
+                                <h1 class="text-base p-5 pl-0 pr-0 pb-2 font-bold">
+                                <span lang="id">Lokasi</span>
+                                <span lang="en">Location</span>
+                                </h1>
+                                <p class="text-base font-light"><div class="flex font-light"><div class="w-7"><img src="assets/svg/lokasi.svg" class="inline-block"></div><div>Karangmojo, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta</div></div></p>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="video-home">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40 z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/timelapse.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="sekaten">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/Sekaten.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="labuhan">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40 z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/Labuhan.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="wayang">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40 z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/Wayang Kulit.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="wonolelo">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40 z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/Ki ageng wonolelo.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>    
+    <div class="fixed modal z-60 h-screen w-full top-0 left-0" id="ramayana">
+        <div class="z-60 h-screen bg-gray-900 opacity-50 w-full absolute"></div>
+        <div class="z-60 w-full h-full flex justify-center items-center">
+            <div class="z-60 h-auto w-3/4 relative overflow-hidden z-40">
+                <img class="z-60 top-4 right-4 w-5 absolute cursor-pointer button-close toWhite z-40 z-40"  src="assets/svg/close.svg" alt="">
+                <video src="assets/video/Ramayana.mp4" controls class="w-full"></video>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white fixed h-screen w-full flex justify-center items-center z-60 top-0 left-0" id="loading-overlay">
+        <img src="assets/img/loading.gif" alt="" srcset="">
+    </div>
+</body>
+<script src="js/main.js"></script>
+</html>

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;700;900&display=swap');
+*{
+    font-family: Poppins;
+}
+body{
+  color:#2D303E;
+}
+.navbar{
+  transition: .5s;
+  z-index: 100;
+}
+.bg-jogja{
+    background: url(../assets/img/tugu.png);
+    background-size: cover;
+}
+.bg-gradient-linear-to-top{
+  background-image: linear-gradient(to top, rgb(0, 0, 0, 0.7), rgba(255,0,0,0));
+}
+.text-black-1a{
+    color: #1a1a1a;
+}
+.bg-gradient-linear-red{
+    background-image: linear-gradient(to right, #B6191F, #E6212A);
+}
+.border-orange{
+    border-color: #F4D92E;
+}
+.border-red{
+    border-color: #E62129;
+}
+.bg-red-jogja{
+  background-color: #E62129;
+}
+.carousel-open:checked+.carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+#carousel-1:checked~.control-1,
+#carousel-2:checked~.control-2,
+#carousel-3:checked~.control-3,
+#carousel-4:checked~.control-4,
+#carousel-5:checked~.control-5 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #2b6cb0;
+  /*Set to match the Tailwind colour you want the active one to be */
+}
+.button-hover-bg-red{
+  transition: .5s;
+}
+.button-hover-bg-red:hover{
+  background: #E6212A;
+}
+.button-hover-red-shadow{
+    transition: .5s;
+}
+.button-hover-red-shadow:hover{
+    box-shadow: 5px 10px 50px #e6212b8a;
+}
+.black-shadow{
+    box-shadow: 5px 10px 50px rgb(0, 0, 0, 0.2);
+}
+.shadow-red{
+  box-shadow: 5px 10px 20px rgb(230, 33, 42, 0.2);
+}
+.button-slide:hover img{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7497%) hue-rotate(183deg) brightness(99%) contrast(96%);
+}
+.toWhite{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7497%) hue-rotate(183deg) brightness(99%) contrast(96%);
+}
+.bg-gradient-linear-slider{
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255,0,0,0));
+}
+.button-hover-gold-shadow{
+  transition: .5s;
+}
+.button-hover-gold-shadow:hover{
+  box-shadow: 5px 10px 50px #f4da2ea9;
+}
+.bg-gradient-linear-gold{
+  background-image: linear-gradient(to right, #CBB319, #F4D92E);
+
+}
+.shadow-red-hover{
+  transition: .2s;
+}
+.shadow-red-hover:hover{
+  box-shadow: 5px 0px 20px #e6212b36;
+}
+.bg-white-jogja{
+  background-color: #F6F6F6;
+}
+.bg-darker-red{
+  background-color: #B6191F;
+}
+.bg-darker-yellow{
+  background-color: #CBB319;
+}
+.bg-yellow{
+  background-color: #F4D92E;
+}
+.text-yellow{
+  color: #F4D92E;
+}
+.red-shadow{
+  box-shadow: 0px 0px 0 10px #e6212b17;
+}
+.tab-menu{
+  transition: .2s;
+}
+html {
+  scroll-behavior: smooth;
+}
+.tab-menu:hover{
+  background-color: #F78978;
+  font-weight: bold;
+  color: #fff;
+}
+.menu-bahasa{
+  border-top: 1px solid rgb(194, 194, 194);
+  font-weight: 400;
+}
+select{
+  outline: none;
+}
+.menu-bahasa:hover{
+  background-color: #F78978;
+  font-weight: bold;
+  color: #fff;
+}
+.menu-bahasa:last-of-type{
+  border-bottom: 0;
+}
+.opacity-2{
+  opacity: 0.04;
+}
+.w-auto-card{
+  width: calc(100%-20rem);
+}
+.overlay::before{
+  content: "";
+  z-index: 500;
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  opacity: .4;
+  width: 100%;
+  height: 100vh;
+}
+.z-60{
+  z-index: 999 !important;
+}
+.menu-item a{
+  display: inline-block;
+}
+.menu-item a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #F4D92E;
+  transition: width .3s;
+}
+.menu-item a:hover::after{
+  width: 100%;
+}
+.bg-pink{
+  background-color: #ED7D50;
+}
+.bg-pink-2{
+  background-color: #F78978;
+}
+.text-black{
+  color: #2D303E !important;
+}
+.toRed{
+  filter: brightness(0) saturate(100%) invert(20%) sepia(76%) saturate(3656%) hue-rotate(346deg) brightness(92%) contrast(97%);
+}
